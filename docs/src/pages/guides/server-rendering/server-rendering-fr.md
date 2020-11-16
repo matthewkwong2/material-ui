@@ -57,9 +57,9 @@ The following is the outline for what the server-side is going to look like. We 
 `server.js`
 
 ```js
-import express from 'express';
+const css = sheets.toString();
 
-// We are going to fill these out in the sections to follow.
+  // Send the rendered page back to the client.
 function renderFullPage(html, css) {
   /* ... */
 }
