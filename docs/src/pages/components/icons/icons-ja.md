@@ -228,7 +228,7 @@ const theme = createMuiTheme({
 
 {{"demo": "pages/components/icons/FontAwesomeIconSize.js"}}
 
-## Font vs SVG どのアプローチを使用しますか？ どのアプローチを使用しますか？ どのアプローチを使用しますか？
+## Font vs SVG どのアプローチを使用しますか？ どのアプローチを使用しますか？ どのアプローチを使用しますか？ どのアプローチを使用しますか？
 
 Both approaches work fine, however there are some subtle differences, especially in terms of performance and rendering quality. Whenever possible SVG is preferred as it allows code splitting, supports more icons, and renders faster and better.
 
