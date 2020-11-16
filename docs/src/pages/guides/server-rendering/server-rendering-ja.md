@@ -2,7 +2,7 @@
 
 <p class="description">サーバーサイドレンダリングの最も一般的な使用例は、ユーザー（または検索エンジンのクローラー）が最初にアプリを要求した際に、最初に提示される画面を描画するのに使われます。</p>
 
-サーバはリクエストを受け付けると、必要なコンポーネントをHTMLフォーマットの文字列として書き出し、クライアント側に送り返します。 そして、初回リクエスト以降のレンダリングはクライアント側で行います。 そして、初回リクエスト以降のレンダリングはクライアント側で行います。
+サーバはリクエストを受け付けると、必要なコンポーネントをHTMLフォーマットの文字列として書き出し、クライアント側に送り返します。 そして、初回リクエスト以降のレンダリングはクライアント側で行います。 そして、初回リクエスト以降のレンダリングはクライアント側で行います。 そして、初回リクエスト以降のレンダリングはクライアント側で行います。
 
 ## Material-UIをサーバ上で使用する
 
@@ -52,14 +52,14 @@ export default theme;
 
 ### サーバーサイド
 
-サーバーサイドのコードは概ね次の様になります。 サーバーサイドのコードは概ね次の様になります。 ここでは[Express](https://expressjs.com/en/guide/using-middleware.html) 使用し、[app.use](https://expressjs.com/en/api.html)を用いてサーバへの全てのリクエストを捌いていきます。 もしExpressや他のサーバーアプリケーションにあまり馴染みがない場合、サーバーへのリクエストごとにhandleRender関数が呼ばれるということだけを覚えておいてください。 もしExpressや他のサーバーアプリケーションにあまり馴染みがない場合、サーバーへのリクエストごとにhandleRender関数が呼ばれるということだけを覚えておいてください。
+サーバーサイドのコードは概ね次の様になります。 サーバーサイドのコードは概ね次の様になります。 サーバーサイドのコードは概ね次の様になります。 ここでは[Express](https://expressjs.com/en/guide/using-middleware.html) 使用し、[app.use](https://expressjs.com/en/api.html)を用いてサーバへの全てのリクエストを捌いていきます。 もしExpressや他のサーバーアプリケーションにあまり馴染みがない場合、サーバーへのリクエストごとにhandleRender関数が呼ばれるということだけを覚えておいてください。 もしExpressや他のサーバーアプリケーションにあまり馴染みがない場合、サーバーへのリクエストごとにhandleRender関数が呼ばれるということだけを覚えておいてください。 もしExpressや他のサーバーアプリケーションにあまり馴染みがない場合、サーバーへのリクエストごとにhandleRender関数が呼ばれるということだけを覚えておいてください。
 
 `server.js`
 
 ```js
-import express from 'express';
+const css = sheets.toString();
 
-// この箇所は後のセクションで埋めていきます。
+  // Send the rendered page back to the client.
 function renderFullPage(html, css) {
   /* ... */
 }
@@ -85,7 +85,7 @@ const app = express();
 
 画面を描画する際に、ルートコンポーネントである`App`コンポーネントを [`StylesProvider`](/styles/api/#stylesprovider)と [`ThemeProvider`](/styles/api/#themeprovider)でラップします。 これによりスタイルの設定が行われ、コンポーネントツリー内に存在する全てのコンポーネントが`theme`インスタンスにアクセスできる様になります。
 
-サーバーサイドレンダリングにおいて最も重要なステップは、最初に描画されるHTMLをクライアントに**渡す前**に描画しきることです。 サーバーサイドレンダリングにおいて最も重要なステップは、最初に描画されるHTMLをクライアントに**渡す前**に描画しきることです。 これを実現するために [ReactDOMServer.renderToString()](https://reactjs.org/docs/react-dom-server.html)を使用します。
+サーバーサイドレンダリングにおいて最も重要なステップは、最初に描画されるHTMLをクライアントに**渡す前**に描画しきることです。 サーバーサイドレンダリングにおいて最も重要なステップは、最初に描画されるHTMLをクライアントに**渡す前**に描画しきることです。 サーバーサイドレンダリングにおいて最も重要なステップは、最初に描画されるHTMLをクライアントに**渡す前**に描画しきることです。 これを実現するために [ReactDOMServer.renderToString()](https://reactjs.org/docs/react-dom-server.html)を使用します。
 
 その後、対象のCSS を`sheets` インスタンスから`sheets.toString()`を用いて文字列として取得します。 ここで、先ほどの`renderFullPage`関数の中で、これらの値がどの様に受け渡されるを見ていきます。 As we are also using emotion as our default styled engine, we need to extract the styles from the emotion instance as well. For this we need to share the same cache definition for both the client and server:
 
